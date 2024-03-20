@@ -31,7 +31,7 @@ extension TypographyUtils on BuildContext {
       );
   TextStyle? get titleMedium => urbanistText.titleMedium?.copyWith(
         color: colors.onSurface,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w700,
       );
   TextStyle? get titleSmall => urbanistText.titleSmall?.copyWith(
         color: colors.onSurface,

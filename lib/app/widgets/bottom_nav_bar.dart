@@ -48,7 +48,7 @@ class BottomNavBar extends StatelessWidget {
     return NavigationBar(
       selectedIndex: selectedIndex,
       onDestinationSelected: onDestinationSelected,
-      labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+      // labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       destinations: destinations.map((val) {
         return NavigationDestination(
           icon: val.outlineIcon,
