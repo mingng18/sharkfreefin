@@ -12,6 +12,13 @@ class CreateDebtsView extends GetView<CreateDebtsController> {
   @override
   Widget build(BuildContext context) {
     var colors = Theme.of(context).colorScheme;
+    List<DropdownMenuEntry<String>> frequencyList =
+        ["Weekly", "Fortnightly", "Monthly", "Quarterly", "6 Months", "Yearly"]
+            .map((String value) => DropdownMenuEntry<String>(
+                  value: value,
+                  label: value,
+                ))
+            .toList();
 
     return Scaffold(
         body: SafeArea(
@@ -29,12 +36,89 @@ class CreateDebtsView extends GetView<CreateDebtsController> {
               ),
               const SizedBox(height: 24),
               CustomTextField(label: "Name", placeholder: "Credit card"),
-              const SizedBox(height: 24),
-              CustomTextField(label: "Name", placeholder: "Credit card"),
-              CustomTextField(label: "Name", placeholder: "Credit card"),
-              CustomTextField(label: "Name", placeholder: "Credit card"),
+              CustomTextField(label: "Amount Due", placeholder: "RM1000"),
+              CustomTextField(label: "Interest Rate", placeholder: "14.95%"),
+              CustomTextField(label: "Repayment Amount", placeholder: "RM100"),
+              DropdownMenu<String>(
+                  width: Get.width - 16 * 2,
+                  enableSearch: false,
+                  controller: controller.frequencyController,
+                  requestFocusOnTap: false,
+                  label: const Text('Repayment Frequency'),
+                  textStyle: context.titleLarge,
+                  inputDecorationTheme: InputDecorationTheme(
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    border: InputBorder.none,
+                    labelStyle: context.titleMedium,
+                    // contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                  ),
+                  initialSelection: frequencyList[0].label,
+                  onSelected: (String? label) {},
+                  dropdownMenuEntries: frequencyList),
+              TextField(
+                controller: controller.dateController,
+                readOnly: true,
+                onTap: () => controller.selectDate(context),
+                style: context.titleLarge,
+                decoration: InputDecoration(
+                    border: InputBorder.none,
+                    label: Text(
+                      "Next Payment Date",
+                      style: context.titleMedium,
+                    ),
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    hintText: "18 March 2024",
+                    hintStyle:
+                        context.titleLarge!.copyWith(color: colors.outline)),
+              ),
+              const SizedBox(height: 32),
+              const Divider(),
+              const SizedBox(height: 32),
+              Row(
+                children: [
+                  const Spacer(),
+                  SizedBox(
+                    height: 44,
+                    child: TextButton.icon(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(colors.secondary),
+                          padding:
+                              MaterialStateProperty.all<EdgeInsetsGeometry?>(
+                                  const EdgeInsets.symmetric(horizontal: 24))),
+                      icon: Icon(
+                        Icons.add,
+                        size: 24,
+                        color: colors.onSecondary,
+                      ),
+                      label: Text(
+                        "Add Debt",
+                        style: context.bodyLarge!
+                            .copyWith(color: colors.onSecondary),
+                      ),
+                    ),
+                  )
+                ],
+              )
             ],
           )),
     ));
   }
+}
+
+enum Frequency {
+  smile('Smile', Icons.sentiment_satisfied_outlined),
+  cloud(
+    'Cloud',
+    Icons.cloud_outlined,
+  ),
+  brush('Brush', Icons.brush_outlined),
+  heart('Heart', Icons.favorite);
+
+  const Frequency(this.label, this.icon);
+  final String label;
+  final IconData icon;
 }

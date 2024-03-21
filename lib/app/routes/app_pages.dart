@@ -6,6 +6,8 @@ import '../modules/create_debts/bindings/create_debts_binding.dart';
 import '../modules/create_debts/views/create_debts_view.dart';
 import '../modules/debt/bindings/debt_binding.dart';
 import '../modules/debt/views/debt_view.dart';
+import '../modules/debt_details/bindings/debt_details_binding.dart';
+import '../modules/debt_details/views/debt_details_view.dart';
 import '../modules/gig/bindings/gig_binding.dart';
 import '../modules/gig/views/gig_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.CREATE_DEBTS,
       page: () => const CreateDebtsView(),
       binding: CreateDebtsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEBT_DETAILS,
+      page: () => const DebtDetailsView(),
+      binding: DebtDetailsBinding(),
     ),
   ];
 }

@@ -1,9 +1,23 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CreateDebtsController extends GetxController {
-  //TODO: Implement CreateDebtsController
+  final TextEditingController frequencyController = TextEditingController();
+  final TextEditingController reminderController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
 
-  final count = 0.obs;
+  Future<void> selectDate(BuildContext context) async {
+    DateTime? _picked = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(2000),
+        lastDate: DateTime(2100));
+
+    if (_picked != null) {
+      dateController.text = _picked.toString().split(" ")[0];
+    }
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +32,4 @@ class CreateDebtsController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

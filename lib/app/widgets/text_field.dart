@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.label, required this.placeholder, this.controller});
+  const CustomTextField(
+      {super.key,
+      required this.label,
+      required this.placeholder,
+      this.controller});
 
   final String label;
   final String placeholder;
@@ -14,6 +18,7 @@ class CustomTextField extends StatelessWidget {
 
     return TextField(
       controller: controller,
+      style: context.titleLarge,
       decoration: InputDecoration(
           border: InputBorder.none,
           label: Text(
