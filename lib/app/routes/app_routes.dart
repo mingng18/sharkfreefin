@@ -6,6 +6,8 @@ abstract class Routes {
   static const GIG = _Paths.GIG;
   static const DEBT = _Paths.DEBT;
   static const HOME = _Paths.HOME;
+  static const ALL_DEBTS = _Paths.ALL_DEBTS;
+  static const CREATE_DEBTS = _Paths.CREATE_DEBTS;
 }
 
 abstract class _Paths {
@@ -13,4 +15,6 @@ abstract class _Paths {
   static const GIG = '/gig';
   static const DEBT = '/debt';
   static const HOME = '/home';
+  static const ALL_DEBTS = '/all-debts';
+  static const CREATE_DEBTS = '/create-debts';
 }

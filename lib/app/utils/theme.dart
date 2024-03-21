@@ -5,7 +5,8 @@ class AppTheme {
   final brandColor = const Color.fromARGB(255, 83, 114, 172);
 
   ThemeData light() {
-    ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: brandColor);
+    ColorScheme colorScheme = ColorScheme.fromSeed(seedColor: brandColor)
+        .copyWith(surface: const Color.fromARGB(255, 237, 237, 244));
 
     return ThemeData.light(useMaterial3: true).copyWith(
       pageTransitionsTheme: pageTransitionsTheme,

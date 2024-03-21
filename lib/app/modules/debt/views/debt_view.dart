@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
+import 'package:sharkfreefin/app/routes/app_pages.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
 
 import '../controllers/debt_controller.dart';
@@ -84,7 +85,9 @@ class DebtView extends GetView<DebtController> {
                   ),
                   CustomButton(
                     buttonText: "See More",
-                    function: () {},
+                    function: () {
+                      Get.toNamed(Routes.ALL_DEBTS);
+                    },
                   ).small(context),
                 ],
               ),
@@ -196,7 +199,7 @@ class DebtView extends GetView<DebtController> {
                       ),
                     ],
                   ),
-                      const SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
