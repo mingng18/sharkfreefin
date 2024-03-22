@@ -90,23 +90,25 @@ class AllDebtsView extends GetView<AllDebtsController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     HorizontalCard(
-                            title: "Car",
-                            icon: Icons.car_repair,
-                            subtitle: "RM 1.000.000 Remaining",
-                            body1: "RM 1600 Due on 26/3/2024",
-                            body2: "10 years, 11 months left",
-                            progress: 0.2,
-                            onPressed: () {})
-                        .debt(context),
+                        title: "Car",
+                        icon: Icons.car_repair,
+                        subtitle: "RM 1.000.000 Remaining",
+                        body1: "RM 1600 Due on 26/3/2024",
+                        body2: "10 years, 11 months left",
+                        progress: 0.2,
+                        onPressed: () {
+                          Get.toNamed(Routes.DEBT_DETAILS);
+                        }).debt(context),
                     HorizontalCard(
-                            title: "Car",
-                            icon: Icons.car_repair,
-                            subtitle: "RM 1.000.000 Remaining",
-                            body1: "RM 1600 Due on 26/3/2024",
-                            body2: "10 years, 11 months left",
-                            progress: 0.2,
-                            onPressed: () {})
-                        .debt(context),
+                        title: "Car",
+                        icon: Icons.car_repair,
+                        subtitle: "RM 1.000.000 Remaining",
+                        body1: "RM 1600 Due on 26/3/2024",
+                        body2: "10 years, 11 months left",
+                        progress: 0.2,
+                        onPressed: () {
+                          Get.toNamed(Routes.DEBT_DETAILS);
+                        }).debt(context),
                   ],
                 ),
               ),

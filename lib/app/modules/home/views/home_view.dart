@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/modules/behavior/views/behavior_view.dart';
+import 'package:sharkfreefin/app/modules/community/views/community_view.dart';
 import 'package:sharkfreefin/app/modules/debt/views/debt_view.dart';
 import 'package:sharkfreefin/app/modules/gig/views/gig_view.dart';
+import 'package:sharkfreefin/app/modules/landing/views/landing_view.dart';
 
 import '../controllers/home_controller.dart';
 import 'package:sharkfreefin/app/widgets/bottom_nav_bar.dart';
@@ -24,8 +27,10 @@ class HomeView extends GetView<HomeController> {
         child: Obx(() => IndexedStack(
               index: controller.tabIndex.value,
               children: const [
+                LandingView(),
                 DebtView(),
-                GigView(),
+                CommunityView(),
+                BehaviorView(),
               ],
             )),
       ),

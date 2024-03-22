@@ -1,11 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class DebtDetailsController extends GetxController {
-  //TODO: Implement DebtDetailsController
+class DebtDetailsController extends GetxController
+    with GetSingleTickerProviderStateMixin {
+  late TabController tabController;
 
-  final count = 0.obs;
   @override
   void onInit() {
+    tabController = TabController(length: 2, vsync: this);
     super.onInit();
   }
 
@@ -16,8 +18,7 @@ class DebtDetailsController extends GetxController {
 
   @override
   void onClose() {
+    tabController.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

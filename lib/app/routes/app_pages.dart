@@ -2,6 +2,10 @@ import 'package:get/get.dart';
 
 import '../modules/all_debts/bindings/all_debts_binding.dart';
 import '../modules/all_debts/views/all_debts_view.dart';
+import '../modules/behavior/bindings/behavior_binding.dart';
+import '../modules/behavior/views/behavior_view.dart';
+import '../modules/community/bindings/community_binding.dart';
+import '../modules/community/views/community_view.dart';
 import '../modules/create_debts/bindings/create_debts_binding.dart';
 import '../modules/create_debts/views/create_debts_view.dart';
 import '../modules/debt/bindings/debt_binding.dart';
@@ -12,6 +16,8 @@ import '../modules/gig/bindings/gig_binding.dart';
 import '../modules/gig/views/gig_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/landing/bindings/landing_binding.dart';
+import '../modules/landing/views/landing_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +56,21 @@ class AppPages {
       name: _Paths.DEBT_DETAILS,
       page: () => const DebtDetailsView(),
       binding: DebtDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.LANDING,
+      page: () => const LandingView(),
+      binding: LandingBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMMUNITY,
+      page: () => const CommunityView(),
+      binding: CommunityBinding(),
+    ),
+    GetPage(
+      name: _Paths.BEHAVIOR,
+      page: () => const BehaviorView(),
+      binding: BehaviorBinding(),
     ),
   ];
 }
