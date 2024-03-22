@@ -39,37 +39,15 @@ class PaymentStrategyView extends GetView<PaymentStrategyController> {
                 const SizedBox(height: 32),
                 const Divider(),
                 const SizedBox(height: 32),
-                paymentStrategyCard(
-                    context,
-                    () => controller.changePaymentStrategy(PaymentStrategy.standard),
-                    PaymentStrategy.standard.title,
-                    PaymentStrategy.standard.subtitle,
-                    PaymentStrategy.standard.body,
-                    PaymentStrategy.standard.value),
+                paymentStrategyCard(context, PaymentStrategy.standard),
+                const SizedBox(height: 16),
+                paymentStrategyCard(context, PaymentStrategy.avalanche),
                 const SizedBox(height: 16),
                 paymentStrategyCard(
-                    context,
-                    () {},
-                    PaymentStrategy.avalanche.title,
-                    PaymentStrategy.avalanche.subtitle,
-                    PaymentStrategy.avalanche.body,
-                    PaymentStrategy.avalanche.value),
+                    context, PaymentStrategy.snowballLowestBalance),
                 const SizedBox(height: 16),
                 paymentStrategyCard(
-                    context,
-                    () {},
-                    PaymentStrategy.snowballLowestBalance.title,
-                    PaymentStrategy.snowballLowestBalance.subtitle,
-                    PaymentStrategy.snowballLowestBalance.body,
-                    PaymentStrategy.snowballLowestBalance.value),
-                const SizedBox(height: 16),
-                paymentStrategyCard(
-                    context,
-                    () {},
-                    PaymentStrategy.snowballHighestBalance.title,
-                    PaymentStrategy.snowballHighestBalance.subtitle,
-                    PaymentStrategy.snowballHighestBalance.body,
-                    PaymentStrategy.snowballHighestBalance.value),
+                    context, PaymentStrategy.snowballHighestBalance),
                 const SizedBox(height: 40),
               ],
             ),
@@ -77,47 +55,56 @@ class PaymentStrategyView extends GetView<PaymentStrategyController> {
     ));
   }
 
-  Widget paymentStrategyCard(BuildContext context, VoidCallback onPressed,
-      String title, String subtitle, String body, String value) {
+  Widget paymentStrategyCard(BuildContext context, PaymentStrategy strategy) {
     var colors = Theme.of(context).colorScheme;
-    var textColor = value == controller.selectedPaymentStrategy.value.value
-        ? colors.primaryContainer
-        : colors.onSurface;
     return Obx(() => Container(
         width: double.infinity,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: value == controller.selectedPaymentStrategy.value.value
-                ? colors.onPrimaryContainer
-                : colors.surface),
+            color:
+                strategy.value == controller.selectedPaymentStrategy.value.value
+                    ? colors.onPrimaryContainer
+                    : colors.surface),
         child: Material(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(8),
           child: InkWell(
-            onTap: onPressed,
+            onTap: () => controller.changePaymentStrategy(strategy),
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      title,
-                      style: context.titleLarge!.copyWith(color: textColor),
+                      strategy.title,
+                      style: context.titleLarge!.copyWith(
+                          color: strategy.value ==
+                                  controller.selectedPaymentStrategy.value.value
+                              ? colors.primaryContainer
+                              : colors.onSurface),
                     ),
                     const SizedBox(height: 8),
-                    subtitle == ""
+                    strategy.subtitle == ""
                         ? const SizedBox()
                         : Text(
-                            subtitle,
-                            style:
-                                context.bodyLarge!.copyWith(color: textColor),
+                            strategy.subtitle,
+                            style: context.bodyLarge!.copyWith(
+                                color: strategy.value ==
+                                        controller
+                                            .selectedPaymentStrategy.value.value
+                                    ? colors.primaryContainer
+                                    : colors.onSurface),
                           ),
-                    subtitle == ""
+                    strategy.subtitle == ""
                         ? const SizedBox()
                         : const SizedBox(height: 8),
                     Text(
-                      body,
-                      style: context.labelMedium!.copyWith(color: textColor),
+                      strategy.body,
+                      style: context.labelMedium!.copyWith(
+                          color: strategy.value ==
+                                  controller.selectedPaymentStrategy.value.value
+                              ? colors.primaryContainer
+                              : colors.onSurface),
                     ),
                   ]),
             ),

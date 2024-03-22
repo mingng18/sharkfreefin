@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PaymentStrategyController extends GetxController {
   Rx<PaymentStrategy> selectedPaymentStrategy = PaymentStrategy.standard.obs;
 
-  void changePaymentStrategy(PaymentStrategy strategy) {}
+  void changePaymentStrategy(PaymentStrategy strategy) {
+    selectedPaymentStrategy.value = strategy;
+  }
 
   @override
   void onInit() {
