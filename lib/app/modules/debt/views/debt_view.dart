@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 import 'package:sharkfreefin/app/routes/app_pages.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
-import 'package:sharkfreefin/app/widgets/payment_strategy_card.dart';
 
 import '../controllers/debt_controller.dart';
 
@@ -145,9 +144,29 @@ class DebtView extends GetView<DebtController> {
               ),
             ),
             const SizedBox(height: 40),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: PaymentStrategyCard(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Payment Strategy Chosen",
+                      style: context.titleMedium,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Avalanche",
+                          style: context.titleLarge,
+                        ),
+                        CustomButton(
+                          buttonText: "See More",
+                          function: () {},
+                        ).small(context),
+                      ],
+                    )
+                  ]),
             ),
             const SizedBox(height: 40),
             Padding(
@@ -207,7 +226,7 @@ class DebtView extends GetView<DebtController> {
   }
 
   Widget debtCard(BuildContext context, String title, IconData icon,
-      double amount, String date) {
+    double amount, String date) {
     var colors = Theme.of(context).colorScheme;
 
     return Container(
@@ -223,7 +242,6 @@ class DebtView extends GetView<DebtController> {
             Expanded(
               child: Text(
                 title,
-                style: context.bodyLarge,
                 softWrap: true,
                 overflow: TextOverflow.ellipsis,
               ),
