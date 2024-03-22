@@ -10,6 +10,8 @@ import '../modules/create_debts/bindings/create_debts_binding.dart';
 import '../modules/create_debts/views/create_debts_view.dart';
 import '../modules/debt/bindings/debt_binding.dart';
 import '../modules/debt/views/debt_view.dart';
+import '../modules/debt_analytic_details/bindings/debt_analytic_details_binding.dart';
+import '../modules/debt_analytic_details/views/debt_analytic_details_view.dart';
 import '../modules/debt_details/bindings/debt_details_binding.dart';
 import '../modules/debt_details/views/debt_details_view.dart';
 import '../modules/gig/bindings/gig_binding.dart';
@@ -18,6 +20,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/landing/bindings/landing_binding.dart';
 import '../modules/landing/views/landing_view.dart';
+import '../modules/payment_strategy/bindings/payment_strategy_binding.dart';
+import '../modules/payment_strategy/views/payment_strategy_view.dart';
 
 part 'app_routes.dart';
 
@@ -71,6 +75,16 @@ class AppPages {
       name: _Paths.BEHAVIOR,
       page: () => const BehaviorView(),
       binding: BehaviorBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEBT_ANALYTIC_DETAILS,
+      page: () => const DebtAnalyticDetailsView(),
+      binding: DebtAnalyticDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT_STRATEGY,
+      page: () => const PaymentStrategyView(),
+      binding: PaymentStrategyBinding(),
     ),
   ];
 }

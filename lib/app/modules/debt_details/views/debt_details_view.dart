@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 import 'package:sharkfreefin/app/widgets/back_button.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
+import 'package:sharkfreefin/app/widgets/hori_card.dart';
 
 import '../controllers/debt_details_controller.dart';
 
@@ -18,6 +19,7 @@ class DebtDetailsView extends GetView<DebtDetailsController> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const SizedBox(height: 16),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -78,35 +80,53 @@ class DebtDetailsView extends GetView<DebtDetailsController> {
           ),
           const SizedBox(height: 32),
           TabBar(
-          controller: controller.tabController,
-          tabs: const <Widget>[
-            Tab(
-              icon: Icon(Icons.cloud_outlined),
-            ),
-            Tab(
-              icon: Icon(Icons.beach_access_sharp),
-            ),
-            Tab(
-              icon: Icon(Icons.brightness_5_sharp),
-            ),
-          ],
-        ),
-        TabBarView(
-        controller: controller.tabController,
-        children: const <Widget>[
-          Center(
-            child: Text("It's cloudy here"),
+            controller: controller.tabController,
+            tabs: <Widget>[
+              Tab(
+                icon: Text(
+                  "Upcoming",
+                  style: context.titleSmall,
+                ),
+              ),
+              Tab(
+                icon: Text(
+                  "Past",
+                  style: context.titleSmall,
+                ),
+              ),
+            ],
           ),
-          Center(
-            child: Text("It's rainy here"),
+          Expanded(
+            child: TabBarView(
+              controller: controller.tabController,
+              children: <Widget>[
+                upcomingPayment(context, false),
+                upcomingPayment(context, true),
+              ],
+            ),
           ),
-          Center(
-            child: Text("It's sunny here"),
-          ),
-        ],
-      ),
         ]),
       ),
     ));
+  }
+
+  Widget upcomingPayment(BuildContext context, bool paid) {
+    return Column(
+      children: [
+        const SizedBox(height: 16),
+        HorizontalCard(
+                title: '1 April 2024 (Monday)',
+                subtitle: 'RM1,500',
+                body1: 'Principal: RM1,239.00 | Interest: RM254.17',
+                onPressed: () {})
+            .debtPayment(context, paid),
+        HorizontalCard(
+                title: '1 April 2024 (Monday)',
+                subtitle: 'RM1,500',
+                body1: 'Principal: RM1,239.00 | Interest: RM254.17',
+                onPressed: () {})
+            .debtPayment(context, paid),
+      ],
+    );
   }
 }

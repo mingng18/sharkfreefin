@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 import 'package:sharkfreefin/app/routes/app_pages.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
+import 'package:sharkfreefin/app/widgets/payment_strategy_card.dart';
 
 import '../controllers/debt_controller.dart';
 
@@ -144,29 +145,9 @@ class DebtView extends GetView<DebtController> {
               ),
             ),
             const SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Payment Strategy Chosen",
-                      style: context.titleMedium,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Avalanche",
-                          style: context.titleLarge,
-                        ),
-                        CustomButton(
-                          buttonText: "See More",
-                          function: () {},
-                        ).small(context),
-                      ],
-                    )
-                  ]),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              child: PaymentStrategyCard(),
             ),
             const SizedBox(height: 40),
             Padding(

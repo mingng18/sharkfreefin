@@ -33,7 +33,7 @@ class AllDebtsView extends GetView<AllDebtsController> {
                 children: [
                   const CustomBackButton(),
                   TextButton.icon(
-                    onPressed: () {},
+                    onPressed: () => Get.toNamed(Routes.DEBT_ANALYTIC_DETAILS),
                     icon: const Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 16,

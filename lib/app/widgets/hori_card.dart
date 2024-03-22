@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sharkfreefin/app/extensions.dart';
+import 'package:sharkfreefin/app/widgets/button.dart';
 
 class HorizontalCard extends StatelessWidget {
   const HorizontalCard({
@@ -97,6 +98,87 @@ class HorizontalCard extends StatelessWidget {
                       value: progress,
                       backgroundColor: colors.tertiaryContainer,
                       color: colors.tertiary,
+                    ),
+                    const SizedBox(height: 8),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 16)
+      ],
+    );
+  }
+
+  Widget debtPayment(BuildContext context, bool paid) {
+    var colors = Theme.of(context).colorScheme;
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8), color: colors.surface),
+          child: Material(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(8),
+            child: InkWell(
+              onTap: () {},
+              borderRadius: BorderRadius.circular(8),
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: context.titleLarge,
+                            softWrap: true,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        SizedBox(
+                          height: 44,
+                          width: 44,
+                          child: IconButton.filled(
+                            iconSize: 44,
+                            style: IconButton.styleFrom(
+                              backgroundColor: colors.onPrimaryContainer,
+                            ),
+                            icon: Icon(
+                              !paid ? Icons.done : Icons.close,
+                              color: colors.primaryContainer,
+                              size: 16,
+                            ),
+                            onPressed: () {},
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      subtitle,
+                      style: context.titleMedium,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          body1,
+                          style: context.labelSmall,
+                        ),
+                        !paid
+                            ? CustomButton(
+                                buttonText: "Pay Extra",
+                                function: () {},
+                              ).small(context)
+                            : const SizedBox()
+                      ],
                     ),
                     const SizedBox(height: 8),
                   ],

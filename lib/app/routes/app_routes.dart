@@ -12,6 +12,8 @@ abstract class Routes {
   static const LANDING = _Paths.LANDING;
   static const COMMUNITY = _Paths.COMMUNITY;
   static const BEHAVIOR = _Paths.BEHAVIOR;
+  static const DEBT_ANALYTIC_DETAILS = _Paths.DEBT_ANALYTIC_DETAILS;
+  static const PAYMENT_STRATEGY = _Paths.PAYMENT_STRATEGY;
 }
 
 abstract class _Paths {
@@ -25,4 +27,6 @@ abstract class _Paths {
   static const LANDING = '/landing';
   static const COMMUNITY = '/community';
   static const BEHAVIOR = '/behavior';
+  static const DEBT_ANALYTIC_DETAILS = '/debt-analytic-details';
+  static const PAYMENT_STRATEGY = '/payment-strategy';
 }

@@ -21,7 +21,7 @@ const List<Destination> destinations = <Destination>[
     tooltip: "Ask Questions in Chatbot",
   ),
   Destination(
-    label: 'Compare',
+    label: 'My Behaviour',
     icon: Icon(Icons.monitor_heart),
     outlineIcon: Icon(Icons.monitor_heart_outlined),
     tooltip: "Price Comparision",
