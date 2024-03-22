@@ -14,6 +14,10 @@ import '../modules/debt_analytic_details/bindings/debt_analytic_details_binding.
 import '../modules/debt_analytic_details/views/debt_analytic_details_view.dart';
 import '../modules/debt_details/bindings/debt_details_binding.dart';
 import '../modules/debt_details/views/debt_details_view.dart';
+import '../modules/debt_materials/bindings/debt_materials_binding.dart';
+import '../modules/debt_materials/views/debt_materials_view.dart';
+import '../modules/dmp_program/bindings/dmp_program_binding.dart';
+import '../modules/dmp_program/views/dmp_program_view.dart';
 import '../modules/gig/bindings/gig_binding.dart';
 import '../modules/gig/views/gig_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -85,6 +89,16 @@ class AppPages {
       name: _Paths.PAYMENT_STRATEGY,
       page: () => const PaymentStrategyView(),
       binding: PaymentStrategyBinding(),
+    ),
+    GetPage(
+      name: _Paths.DMP_PROGRAM,
+      page: () => const DmpProgramView(),
+      binding: DmpProgramBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEBT_MATERIALS,
+      page: () => const DebtMaterialsView(),
+      binding: DebtMaterialsBinding(),
     ),
   ];
 }

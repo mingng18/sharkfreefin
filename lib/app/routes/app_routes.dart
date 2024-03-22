@@ -14,6 +14,8 @@ abstract class Routes {
   static const BEHAVIOR = _Paths.BEHAVIOR;
   static const DEBT_ANALYTIC_DETAILS = _Paths.DEBT_ANALYTIC_DETAILS;
   static const PAYMENT_STRATEGY = _Paths.PAYMENT_STRATEGY;
+  static const DMP_PROGRAM = _Paths.DMP_PROGRAM;
+  static const DEBT_MATERIALS = _Paths.DEBT_MATERIALS;
 }
 
 abstract class _Paths {
@@ -29,4 +31,6 @@ abstract class _Paths {
   static const BEHAVIOR = '/behavior';
   static const DEBT_ANALYTIC_DETAILS = '/debt-analytic-details';
   static const PAYMENT_STRATEGY = '/payment-strategy';
+  static const DMP_PROGRAM = '/dmp-program';
+  static const DEBT_MATERIALS = '/debt-materials';
 }

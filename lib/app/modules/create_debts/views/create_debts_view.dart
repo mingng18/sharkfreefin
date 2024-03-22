@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 import 'package:sharkfreefin/app/widgets/back_button.dart';
+import 'package:sharkfreefin/app/widgets/button.dart';
 import 'package:sharkfreefin/app/widgets/text_field.dart';
 
 import '../controllers/create_debts_controller.dart';
@@ -74,35 +75,11 @@ class CreateDebtsView extends GetView<CreateDebtsController> {
               const SizedBox(height: 32),
               const Divider(),
               const SizedBox(height: 32),
-              Row(
-                children: [
-                  const Spacer(),
-                  SizedBox(
-                    height: 44,
-                    child: TextButton.icon(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStateProperty.all(colors.secondary),
-                          padding:
-                              MaterialStateProperty.all<EdgeInsetsGeometry?>(
-                                  const EdgeInsets.symmetric(horizontal: 24))),
-                      icon: Icon(
-                        Icons.add,
-                        size: 24,
-                        color: colors.onSecondary,
-                      ),
-                      label: Text(
-                        "Add Debt",
-                        style: context.bodyLarge!
-                            .copyWith(color: colors.onSecondary),
-                      ),
-                    ),
-                  )
-                ],
-              )
+              CustomButton(
+                buttonText: "Add Debt",
+                function: () => Get.back(),
+                icon: Icons.add,
+              ),
             ],
           )),
     ));
