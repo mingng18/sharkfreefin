@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/data/model/chart_data_model.dart';
 import 'package:sharkfreefin/app/extensions.dart';
+import 'package:sharkfreefin/app/modules/home/controllers/home_controller.dart';
+import 'package:sharkfreefin/app/routes/app_pages.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -91,11 +93,12 @@ class LandingView extends GetView<LandingController> {
                 children: [
                   const SizedBox(width: 16),
                   spendingTodoCard(context),
-                  questionnaireTodoCard(context, () {}),
+                  questionnaireTodoCard(
+                      context, () => Get.toNamed(Routes.BEHAVIOR_START)),
                   bulkPurchaseTodoCard(context),
                   surveyCard(context),
-                  debtTodoCard(
-                      context, "House", Icons.house, 2131, "1/2/2024", () {})
+                  debtTodoCard(context, "House", Icons.house, 2131, "1/2/2024",
+                      () => Get.toNamed(Routes.DEBT_DETAILS))
                 ],
               ),
             ),
@@ -114,7 +117,7 @@ class LandingView extends GetView<LandingController> {
                         ),
                         CustomButton(
                           buttonText: "See More",
-                          onPressed: () {},
+                          onPressed: () => HomeController.to.changeTabIndex(3),
                         ).small(context),
                       ],
                     ),
@@ -233,7 +236,7 @@ class LandingView extends GetView<LandingController> {
               child: CustomButton(
                 buttonText: "Open",
                 icon: Icons.arrow_forward_ios_rounded,
-                onPressed: () {},
+                onPressed: () => HomeController.to.changeTabIndex(3),
               ).roundButton(context))
         ],
       ),

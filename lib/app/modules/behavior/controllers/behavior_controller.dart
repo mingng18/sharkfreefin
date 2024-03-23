@@ -10,6 +10,14 @@ class BehaviorController extends GetxController
   late TabController tabController;
   List<SuggestionData> suggestions = [];
 
+  void nextPage() {
+    tabController.index++;
+  }
+
+  void prevPage() {
+    tabController.index--;
+  }
+
   @override
   void onInit() async {
     super.onInit();

@@ -34,12 +34,12 @@ class BehaviorView extends GetView<BehaviorController> {
                     "Spending\nBehaviour",
                     style: context.displayMedium,
                   ),
-                  CustomButton(
-                    buttonText: "Update Expenses",
-                    onPressed: () {
-                      Get.toNamed(Routes.ALL_DEBTS);
-                    },
-                  ).small(context),
+                  // CustomButton(
+                  //   buttonText: "Update Expenses",
+                  //   onPressed: () {
+                  //     Get.toNamed(Routes.ALL_DEBTS);
+                  //   },
+                  // ).small(context),
                 ],
               ),
             ),
@@ -93,12 +93,37 @@ class BehaviorView extends GetView<BehaviorController> {
                   });
                   return SizedBox(
                     height: 240,
-                    child: TabBarView(
-                      controller: controller.tabController,
-                      children: <Widget>[
-                        suggestionCard(context, controller.suggestions[0]),
-                        suggestionCard(context, controller.suggestions[1]),
-                        suggestionCard(context, controller.suggestions[2]),
+                    child: Stack(
+                      children: [
+                        TabBarView(
+                          controller: controller.tabController,
+                          children: <Widget>[
+                            suggestionCard(context, controller.suggestions[0]),
+                            suggestionCard(context, controller.suggestions[1]),
+                            suggestionCard(context, controller.suggestions[2]),
+                          ],
+                        ),
+                        Positioned(
+                          right: 16,
+                          bottom: 16,
+                          child: IconButton(
+                              onPressed: () => controller.nextPage(),
+                              icon: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 16,
+                              )),
+                        ),
+                        Positioned(
+                          right: 48,
+                          bottom: 16,
+                          child: IconButton(
+                            onPressed: () => controller.prevPage(),
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              size: 16,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   );
