@@ -18,7 +18,11 @@ class QuestionnaireModel {
       number: map['number'] ?? 0,
       title: map['title'] ?? '',
       category: map['category'] ?? '',
-      type: map['type'] == 'mcq' ? QuestionType.mcq : QuestionType.input,
+      type: map['type'] == 'mcq'
+          ? QuestionType.mcq
+          : map['type'] == 'multipleCard'
+              ? QuestionType.multipleCard
+              : QuestionType.input,
       answers: (map['answers'] as List<dynamic>?)
           ?.map((answer) => (answer as Map<String, dynamic>)
               .map((key, value) => MapEntry(key, value.toString())))
@@ -42,10 +46,7 @@ class QuestionnaireModel {
   }
 }
 
-enum QuestionType {
-  mcq,
-  input,
-}
+enum QuestionType { mcq, input, multipleCard }
 
 extension QuestionTypeExtension on QuestionType {
   String get value {
@@ -54,6 +55,8 @@ extension QuestionTypeExtension on QuestionType {
         return 'mcq';
       case QuestionType.input:
         return 'input';
+      case QuestionType.multipleCard:
+        return 'multipleCard';
     }
   }
 }

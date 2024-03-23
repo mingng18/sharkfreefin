@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/modules/create_help/views/create_help_view2.dart';
 
 import '../modules/alert_message/bindings/alert_message_binding.dart';
 import '../modules/alert_message/views/alert_message_view.dart';
@@ -148,6 +149,11 @@ class AppPages {
     GetPage(
       name: _Paths.CREATE_HELP,
       page: () => const CreateHelpView(),
+      binding: CreateHelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_HELP2,
+      page: () => const CreateHelpView2(),
       binding: CreateHelpBinding(),
     ),
     GetPage(

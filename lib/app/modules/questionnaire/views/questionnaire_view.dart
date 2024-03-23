@@ -117,6 +117,89 @@ class QuestionnaireView extends GetView<QuestionnaireController> {
                             ],
                           )
                         : const SizedBox(),
+                    controller.question.type == QuestionType.multipleCard
+                        ? Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  const Spacer(),
+                                  TextButton.icon(
+                                    onPressed: () {},
+                                    icon: const Icon(Icons.add),
+                                    label: Text(
+                                      "Click to add more",
+                                      style: context.labelSmall,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(height: 32),
+                              Image.asset(
+                              "lib/app/data/asset/images/lol.png",
+                              fit: BoxFit.cover,
+                            ),
+                              // Container(
+                              //   width: double.infinity,
+                              //   padding:
+                              //       const EdgeInsets.symmetric(horizontal: 16),
+                              //   decoration: BoxDecoration(
+                              //       borderRadius: BorderRadius.circular(8),
+                              //       color: colors.secondaryContainer),
+                              //   child: Expanded(
+                              //     child: Row(children: [
+                              //       Column(
+                              //         mainAxisAlignment:
+                              //             MainAxisAlignment.spaceBetween,
+                              //         crossAxisAlignment:
+                              //             CrossAxisAlignment.start,
+                              //         children: [
+                              //           // CustomTextField(
+                              //           //     label: "",
+                              //           //     placeholder: "Cafe Hopping"),
+                              //           Text(
+                              //             "Category",
+                              //             style: context.titleMedium,
+                              //           ),
+                              //           Text(
+                              //             "Apparel",
+                              //             style: context.titleLarge,
+                              //           ),
+                              //         ],
+                              //       ),
+                              //       // Column(
+                              //       //   children: [
+                              //       //     CustomButton(
+                              //       //             buttonText: "",
+                              //       //             onPressed: () {},
+                              //       //             icon: Icons.add)
+                              //       //         .roundButton(context),
+                              //       //     Row(
+                              //       //       crossAxisAlignment:
+                              //       //           CrossAxisAlignment.end,
+                              //       //       children: [
+                              //       //         Padding(
+                              //       //           padding: const EdgeInsets.only(
+                              //       //               bottom: 12.0),
+                              //       //           child: Text(
+                              //       //             "RM",
+                              //       //             style: context.titleLarge,
+                              //       //           ),
+                              //       //         ),
+                              //       //         Expanded(
+                              //       //             child: CustomTextField(
+                              //       //                 label: "",
+                              //       //                 placeholder: "1000"))
+                              //       //       ],
+                              //       //     ),
+                              //       //   ],
+                              //       // )
+                              //     ]),
+                              //   ),
+                              // )
+                            ],
+                          )
+                        : const SizedBox(),
                     const Spacer(),
                     CustomButton(
                         buttonText: "Next",

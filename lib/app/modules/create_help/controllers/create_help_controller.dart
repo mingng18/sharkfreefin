@@ -1,9 +1,12 @@
 import 'package:get/get.dart';
 
 class CreateHelpController extends GetxController {
-  //TODO: Implement CreateHelpController
+  Rx<HelpType> helpType = HelpType.direct.obs;
 
-  final count = 0.obs;
+  void changeHelpType(HelpType type){
+    helpType.value = type;
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +21,7 @@ class CreateHelpController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
+
+enum HelpType { direct, community }
+enum QuestionType { poll, input }

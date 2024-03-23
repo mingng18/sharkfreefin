@@ -189,7 +189,7 @@ class CommunityView extends GetView<CommunityController> {
                     color: colors.onPrimaryContainer,
                   ),
                 ),
-                onSelected: (isSelected) {},
+                onSelected: (bruh) => Get.toNamed(Routes.CREATE_HELP),
               )),
         ),
       ],

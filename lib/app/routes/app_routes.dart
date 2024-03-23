@@ -23,6 +23,7 @@ abstract class Routes {
   static const HELP = _Paths.HELP;
   static const PURCHASE_GOOD_DETAIL = _Paths.PURCHASE_GOOD_DETAIL;
   static const CREATE_HELP = _Paths.CREATE_HELP;
+  static const CREATE_HELP2 = _Paths.CREATE_HELP2;
   static const BEHAVIOR_START = _Paths.BEHAVIOR_START;
 }
 
@@ -48,5 +49,6 @@ abstract class _Paths {
   static const HELP = '/help';
   static const PURCHASE_GOOD_DETAIL = '/purchase-good-detail';
   static const CREATE_HELP = '/create-help';
+  static const CREATE_HELP2 = '/create-help2';
   static const BEHAVIOR_START = '/behavior-start-ques';
 }

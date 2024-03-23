@@ -31,11 +31,13 @@ class AlertMessageView extends GetView<AlertMessageController> {
                   Text(
                     controller.alertMessage.title,
                     style: context.headlineLarge,
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 8),
                   Text(
                     controller.alertMessage.body ?? "",
                     style: context.bodyLarge,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               )),

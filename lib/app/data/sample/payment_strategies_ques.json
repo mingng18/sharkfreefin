@@ -11,12 +11,64 @@
   },
   "question2": {
     "number": 2,
-    "title": "Are you mort rates or low interest rates first?",
+    "title": "Do you prefer to see quick progress by paying off smaller debts first?",
+    "type": "mcq",
+    "answers": [{ "yes": "Yes" }, { "no": "No" }]
+  },
+  "question3": {
+    "number": 3,
+    "title": "Are you motivated by the idea of saving money on interest in the long run?",
+    "type": "mcq",
+    "answers": [{ "yes": "Yes" }, { "no": "No" }]
+  },
+  "question4": {
+    "number": 4,
+    "title": "Are you able to pay more than the minimum payment on your debts each month?",
     "type": "mcq",
     "answers": [
-      { "high_interest": "High  rates" },
-      { "low_interest": "Low est rates" },
-      { "equal": "Equed about both" }
+      { "yes": "Yes, I can pay more than the minimum" },
+      { "no": "No, I can only afford the minimum payment" }
+    ]
+  },
+  "question5": {
+    "number": 5,
+    "title": "How would you feel about having one less debt to worry about?",
+    "type": "mcq",
+    "answers": [
+      { "relieved": "Relieved" },
+      { "indifferent": "Indifferent" },
+      { "unsure": "Unsure" }
+    ]
+  },
+  "question6": {
+    "number": 6,
+    "title": "How important is it for you to feel a sense of accomplishment in paying off your debts?",
+    "type": "mcq",
+    "answers": [
+      { "very_important": "Very important" },
+      { "somewhat_important": " Somewhat important" },
+      { "not_important": "Not important" }
+    ]
+  },
+  "question7": {
+    "number": 7,
+    "title": "Would you prefer a debt repayment strategy that allows for more flexibility in your monthly payments?",
+    "type": "mcq",
+    "answers": [{ "yes": "Yes" }, { "no": "No" }]
+  },
+  "question8": {
+    "number": 8,
+    "title": "Are there any specific debts you would like to prioritize for repayment (e.g., credit card debt, student loans, etc.)?",
+    "type": "mcq",
+    "answers": [{ "yes": "Yes" }, { "no": "No" }]
+  },
+  "question9": {
+    "number": 9,
+    "title": "How do you feel about the idea of adjusting your debt repayment strategy based on your financial circumstances?",
+    "type": "mcq",
+    "answers": [
+      { "comfortable": "Comfortable" },
+      { "uncomfortable": "Uncomfortable" }
     ]
   }
 }
