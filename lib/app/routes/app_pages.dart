@@ -9,9 +9,12 @@ import '../modules/behavior/views/behavior_view.dart';
 import '../modules/bulk_purchase/bindings/bulk_purchase_binding.dart';
 import '../modules/bulk_purchase/views/bulk_purchase_view.dart';
 import '../modules/community/bindings/community_binding.dart';
+import '../modules/community/views/behavior_question_start_view.dart';
 import '../modules/community/views/community_view.dart';
 import '../modules/create_debts/bindings/create_debts_binding.dart';
 import '../modules/create_debts/views/create_debts_view.dart';
+import '../modules/create_help/bindings/create_help_binding.dart';
+import '../modules/create_help/views/create_help_view.dart';
 import '../modules/debt/bindings/debt_binding.dart';
 import '../modules/debt/views/debt_view.dart';
 import '../modules/debt_analytic_details/bindings/debt_analytic_details_binding.dart';
@@ -141,6 +144,15 @@ class AppPages {
       name: _Paths.PURCHASE_GOOD_DETAIL,
       page: () => const PurchaseGoodDetailView(),
       binding: PurchaseGoodDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.CREATE_HELP,
+      page: () => const CreateHelpView(),
+      binding: CreateHelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.BEHAVIOR_START,
+      page: () => const BehaviorQuesStartView(),
     ),
   ];
 }

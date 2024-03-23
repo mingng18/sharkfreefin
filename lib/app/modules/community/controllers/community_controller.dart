@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/state/questionnaire_state_controller.dart';
 
 class CommunityController extends GetxController {
-  //TODO: Implement CommunityController
+  void startSpendingBehaviourQuestionnaire() {
+    QuestionnaireStateController.to.startQuestion();
+  }
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
@@ -12,12 +14,11 @@ class CommunityController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+    QuestionnaireStateController.to.initSpendingBehaviourQuestionSet();
   }
 
   @override
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

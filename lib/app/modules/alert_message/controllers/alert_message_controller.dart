@@ -1,9 +1,16 @@
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/data/model/alert_message_model.dart';
+import 'package:sharkfreefin/app/routes/app_pages.dart';
 
 class AlertMessageController extends GetxController {
-  //TODO: Implement AlertMessageController
+  static AlertMessageController get to => Get.find();
+  late AlertMessageModel alertMessage;
 
-  final count = 0.obs;
+  void displayAlertPage(AlertMessageModel newAlertMessage) {
+    alertMessage = newAlertMessage;
+    Get.toNamed(Routes.ALERT_MESSAGE);
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +25,4 @@ class AlertMessageController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/data/model/questionnaire_model.dart';
 import 'package:sharkfreefin/app/extensions.dart';
-import 'package:sharkfreefin/app/state/payment_strategy_question_state.dart';
+import 'package:sharkfreefin/app/state/questionnaire_state_controller.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
+import 'package:sharkfreefin/app/widgets/text_field.dart';
 
 import '../controllers/questionnaire_controller.dart';
 
@@ -42,15 +44,29 @@ class QuestionnaireView extends GetView<QuestionnaireController> {
                     ),
                     const SizedBox(height: 32),
                     LinearProgressIndicator(
-                      value: PaymentStrategyQuestionController.to
-                          .calculateProgress(),
+                      value:
+                          QuestionnaireStateController.to.calculateProgress(),
                       backgroundColor: colors.tertiaryContainer,
                       color: colors.tertiary,
                     ),
                     const SizedBox(height: 32),
-                    Text(
-                      "Question ${controller.question.number}",
-                      style: context.displayMedium,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Question ${controller.question.number}",
+                          style: context.displayMedium,
+                        ),
+                        controller.question.category == ""
+                            ? const SizedBox()
+                            : FilterChip(
+                                label: Text(
+                                  controller.question.category!,
+                                  style: context.labelLarge,
+                                ),
+                                onSelected: (bruh) {})
+                      ],
                     ),
                     const SizedBox(height: 16),
                     Text(
@@ -59,7 +75,7 @@ class QuestionnaireView extends GetView<QuestionnaireController> {
                     ),
                     const SizedBox(height: 24),
                     ListView.builder(
-                      itemCount: controller.question.answers!.length,
+                      itemCount: controller.question.answers?.length ?? 0,
                       shrinkWrap: true,
                       itemBuilder: (context, i) {
                         final answer = controller.question.answers![i];
@@ -79,6 +95,28 @@ class QuestionnaireView extends GetView<QuestionnaireController> {
                             ));
                       },
                     ),
+                    controller.question.type == QuestionType.input
+                        ? Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(bottom: 12.0),
+                                    child: Text(
+                                      "RM",
+                                      style: context.titleLarge,
+                                    ),
+                                  ),
+                                  Expanded(
+                                      child: CustomTextField(
+                                          label: "", placeholder: "1000"))
+                                ],
+                              ),
+                            ],
+                          )
+                        : const SizedBox(),
                     const Spacer(),
                     CustomButton(
                         buttonText: "Next",

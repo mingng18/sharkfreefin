@@ -1,0 +1,80 @@
+{
+  "question1": {
+    "number": 1,
+    "title": "What are your range of income?",
+    "type": "mcq",
+    "category": "essential",
+    "answers": [
+      { "<RM2000": "Less than RM2000" },
+      { "RM2000_RM5000": "RM2000 - RM5000" },
+      { "RM5000_RM10000": "RM5000 - RM10000" },
+      { ">RM10000": "More than RM10000" }
+    ]
+  },
+  "question2": {
+    "number": 2,
+    "title": "How much of your monthly income do you typically allocate towards basic needs like housing, food, utilities, and transportation?",
+    "type": "mcq",
+    "category": "essential",
+    "answers": [
+      { "<30%": "Less than 30%" },
+      { "30%_50%": "30% - 50%" },
+      { "51%_70%": "51% - 70%" },
+      { ">70%": "More than 70%" }
+    ]
+  },
+  "question3": {
+    "number": 3,
+    "title": "How much do you spend on housing monthly?",
+    "type": "input",
+    "category": "essential"
+  },
+  "question4": {
+    "number": 4,
+    "title": "How much do you pay for insurance in a month?",
+    "type": "input",
+    "category": "essential"
+  },
+  "question5": {
+    "number": 5,
+    "title": "How much your spend on your transportation monthly?",
+    "type": "input",
+    "category": "essential"
+  },
+  "question6": {
+    "number": 6,
+    "title": "How much your spend on your food monthly?",
+    "type": "input",
+    "category": "essential"
+  },
+  "question7": {
+    "number": 7,
+    "title": "What are your “wants” purchases?",
+    "type": "multipleCard",
+    "category": "optional"
+  },
+  "question8": {
+    "number": 8,
+    "title": "How often do you go café hopping per month.",
+    "type": "mcq",
+    "category": "optional",
+    "answers": [
+      { "1_3": "1 - 3" },
+      { "4_6": "4 - 6" },
+      { "7_10": "7 - 10" },
+      { ">10": "> 10" }
+    ]
+  },
+  "question9": {
+    "number": 9,
+    "title": "How much you spent in each café?",
+    "type": "mcq",
+    "category": "optional",
+    "answers": [
+      { "<RM10": "Less than RM10" },
+      { "RM10_RM20": "RM10 - RM20" },
+      { "RM20-RM30": "RM20 - RM30" },
+      { ">RM30": ">RM30" }
+    ]
+  }
+}

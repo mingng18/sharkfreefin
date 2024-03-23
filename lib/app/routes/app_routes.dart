@@ -22,6 +22,8 @@ abstract class Routes {
   static const BULK_PURCHASE = _Paths.BULK_PURCHASE;
   static const HELP = _Paths.HELP;
   static const PURCHASE_GOOD_DETAIL = _Paths.PURCHASE_GOOD_DETAIL;
+  static const CREATE_HELP = _Paths.CREATE_HELP;
+  static const BEHAVIOR_START = _Paths.BEHAVIOR_START;
 }
 
 abstract class _Paths {
@@ -45,4 +47,6 @@ abstract class _Paths {
   static const BULK_PURCHASE = '/bulk-purchase';
   static const HELP = '/help';
   static const PURCHASE_GOOD_DETAIL = '/purchase-good-detail';
+  static const CREATE_HELP = '/create-help';
+  static const BEHAVIOR_START = '/behavior-start-ques';
 }

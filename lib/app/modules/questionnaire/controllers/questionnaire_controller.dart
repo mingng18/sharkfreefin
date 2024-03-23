@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/data/model/questionnaire_model.dart';
-import 'package:sharkfreefin/app/state/payment_strategy_question_state.dart';
+import 'package:sharkfreefin/app/state/questionnaire_state_controller.dart';
 
 class QuestionnaireController extends GetxController {
   late QuestionnaireModel question;
@@ -13,13 +13,13 @@ class QuestionnaireController extends GetxController {
   }
 
   void onNextPressed() {
-    PaymentStrategyQuestionController.to.nextQuestion();
+    QuestionnaireStateController.to.nextQuestion();
     question = Get.arguments;
     update(['question']);
   }
 
   void onBackPressed() {
-    PaymentStrategyQuestionController.to.prevQuestion();
+    QuestionnaireStateController.to.prevQuestion();
     question = Get.arguments;
     update(['question']);
   }

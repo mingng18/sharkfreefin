@@ -1,0 +1,23 @@
+{
+    "question1": {
+      "number": 1,
+      "title": "Create Help",
+      "type": "mcq",
+      "answers": [
+        { "high_interest": "High interest rates" },
+        { "low_interest": "Low interest rates" },
+        { "equal": "Equally concerned about both" }
+      ]
+    },
+    "question2": {
+      "number": 2,
+      "title": "Are you mort rates or low interest rates first?",
+      "type": "mcq",
+      "answers": [
+        { "high_interest": "High  rates" },
+        { "low_interest": "Low est rates" },
+        { "equal": "Equed about both" }
+      ]
+    }
+  }
+  

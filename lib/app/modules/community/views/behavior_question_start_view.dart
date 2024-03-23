@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
+import 'package:sharkfreefin/app/modules/community/controllers/community_controller.dart';
+import 'package:sharkfreefin/app/widgets/back_button.dart';
 
-import '../controllers/alert_message_controller.dart';
-
-class AlertMessageView extends GetView<AlertMessageController> {
-  const AlertMessageView({Key? key}) : super(key: key);
+class BehaviorQuesStartView extends GetView<CommunityController> {
+  const BehaviorQuesStartView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     var colors = Theme.of(context).colorScheme;
@@ -18,25 +18,28 @@ class AlertMessageView extends GetView<AlertMessageController> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const SizedBox(height: 16),
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: const CustomBackButton()),
               Expanded(
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
-                    "lib/app/data/asset/images/clover_coin.png",
+                    "lib/app/data/asset/images/behavior_coin.png",
                     fit: BoxFit.cover,
                     height: 242,
                   ),
                   const SizedBox(height: 16),
-                  Text(
-                    controller.alertMessage.title,
-                    style: context.headlineLarge,
-                  ),
+                  Text("Understand your spending behaviour",
+                      style: context.headlineLarge,
+                      textAlign: TextAlign.center),
                   const SizedBox(height: 8),
                   Text(
-                    controller.alertMessage.body ?? "",
-                    style: context.bodyLarge,
-                  ),
+                      "Take 5 minutes to complete this survey to know yourself better!",
+                      style: context.bodyLarge,
+                      textAlign: TextAlign.center),
                 ],
               )),
               Row(
@@ -53,14 +56,13 @@ class AlertMessageView extends GetView<AlertMessageController> {
                   // const SizedBox(width: 16),
                   Expanded(
                     child: FilledButton(
-                      onPressed: () => Get.until((route) =>
-                          Get.currentRoute ==
-                          controller.alertMessage.routeName),
+                      onPressed: () =>
+                          controller.startSpendingBehaviourQuestionnaire(),
                       style: ButtonStyle(
                           backgroundColor:
                               MaterialStateProperty.all(colors.secondary)),
                       child: Text(
-                        controller.alertMessage.buttonText,
+                        "Start",
                         style: context.bodyLarge!
                             .copyWith(color: colors.onSecondary),
                       ),
