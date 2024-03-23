@@ -26,7 +26,7 @@ class DebtDetailsView extends GetView<DebtDetailsController> {
               const CustomBackButton(),
               CustomButton(
                 buttonText: "Edit",
-                function: () {},
+                onPressed: () {},
               ).small(context),
             ],
           ),

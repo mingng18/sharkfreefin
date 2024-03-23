@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/data/model/chart_data_model.dart';
 import 'package:sharkfreefin/app/extensions.dart';
 import 'package:sharkfreefin/app/widgets/back_button.dart';
-import 'package:sharkfreefin/app/widgets/button.dart';
 import 'package:sharkfreefin/app/widgets/payment_strategy_card.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 

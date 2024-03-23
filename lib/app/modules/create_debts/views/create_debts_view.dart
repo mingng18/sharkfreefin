@@ -77,7 +77,7 @@ class CreateDebtsView extends GetView<CreateDebtsController> {
               const SizedBox(height: 32),
               CustomButton(
                 buttonText: "Add Debt",
-                function: () => Get.back(),
+                onPressed: () => Get.back(),
                 icon: Icons.add,
               ),
             ],

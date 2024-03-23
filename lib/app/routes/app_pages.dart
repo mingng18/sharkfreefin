@@ -1,9 +1,13 @@
 import 'package:get/get.dart';
 
+import '../modules/alert_message/bindings/alert_message_binding.dart';
+import '../modules/alert_message/views/alert_message_view.dart';
 import '../modules/all_debts/bindings/all_debts_binding.dart';
 import '../modules/all_debts/views/all_debts_view.dart';
 import '../modules/behavior/bindings/behavior_binding.dart';
 import '../modules/behavior/views/behavior_view.dart';
+import '../modules/bulk_purchase/bindings/bulk_purchase_binding.dart';
+import '../modules/bulk_purchase/views/bulk_purchase_view.dart';
 import '../modules/community/bindings/community_binding.dart';
 import '../modules/community/views/community_view.dart';
 import '../modules/create_debts/bindings/create_debts_binding.dart';
@@ -16,16 +20,24 @@ import '../modules/debt_details/bindings/debt_details_binding.dart';
 import '../modules/debt_details/views/debt_details_view.dart';
 import '../modules/debt_materials/bindings/debt_materials_binding.dart';
 import '../modules/debt_materials/views/debt_materials_view.dart';
+import '../modules/debt_materials_details/bindings/debt_materials_details_binding.dart';
+import '../modules/debt_materials_details/views/debt_materials_details_view.dart';
 import '../modules/dmp_program/bindings/dmp_program_binding.dart';
 import '../modules/dmp_program/views/dmp_program_view.dart';
 import '../modules/gig/bindings/gig_binding.dart';
 import '../modules/gig/views/gig_view.dart';
+import '../modules/help/bindings/help_binding.dart';
+import '../modules/help/views/help_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/landing/bindings/landing_binding.dart';
 import '../modules/landing/views/landing_view.dart';
 import '../modules/payment_strategy/bindings/payment_strategy_binding.dart';
 import '../modules/payment_strategy/views/payment_strategy_view.dart';
+import '../modules/purchase_good_detail/bindings/purchase_good_detail_binding.dart';
+import '../modules/purchase_good_detail/views/purchase_good_detail_view.dart';
+import '../modules/questionnaire/bindings/questionnaire_binding.dart';
+import '../modules/questionnaire/views/questionnaire_view.dart';
 
 part 'app_routes.dart';
 
@@ -99,6 +111,36 @@ class AppPages {
       name: _Paths.DEBT_MATERIALS,
       page: () => const DebtMaterialsView(),
       binding: DebtMaterialsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEBT_MATERIALS_DETAILS,
+      page: () => const DebtMaterialsDetailsView(),
+      binding: DebtMaterialsDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.QUESTIONNAIRE,
+      page: () => const QuestionnaireView(),
+      binding: QuestionnaireBinding(),
+    ),
+    GetPage(
+      name: _Paths.ALERT_MESSAGE,
+      page: () => const AlertMessageView(),
+      binding: AlertMessageBinding(),
+    ),
+    GetPage(
+      name: _Paths.BULK_PURCHASE,
+      page: () => const BulkPurchaseView(),
+      binding: BulkPurchaseBinding(),
+    ),
+    GetPage(
+      name: _Paths.HELP,
+      page: () => const HelpView(),
+      binding: HelpBinding(),
+    ),
+    GetPage(
+      name: _Paths.PURCHASE_GOOD_DETAIL,
+      page: () => const PurchaseGoodDetailView(),
+      binding: PurchaseGoodDetailBinding(),
     ),
   ];
 }

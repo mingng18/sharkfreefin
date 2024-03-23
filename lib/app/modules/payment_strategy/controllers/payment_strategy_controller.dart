@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/routes/app_pages.dart';
+import 'package:sharkfreefin/app/state/payment_strategy_question_state.dart';
 
 class PaymentStrategyController extends GetxController {
   Rx<PaymentStrategy> selectedPaymentStrategy = PaymentStrategy.standard.obs;
@@ -8,8 +9,14 @@ class PaymentStrategyController extends GetxController {
     selectedPaymentStrategy.value = strategy;
   }
 
+  void startQuestonnaire() {
+    PaymentStrategyQuestionController.to.startQuestion();
+  }
+
   @override
   void onInit() {
+    Get.put<PaymentStrategyQuestionController>(
+        PaymentStrategyQuestionController());
     super.onInit();
   }
 

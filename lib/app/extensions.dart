@@ -36,6 +36,8 @@ extension TypographyUtils on BuildContext {
   TextStyle? get titleSmall => urbanistText.titleSmall?.copyWith(
         color: colors.onSurface,
       );
+  TextStyle? get labelLargeProminent => urbanistText.labelLarge
+      ?.copyWith(color: colors.onSurface, fontWeight: FontWeight.bold);
   TextStyle? get labelLarge => urbanistText.labelLarge?.copyWith(
         color: colors.onSurface,
       );

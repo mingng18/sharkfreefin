@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:sharkfreefin/app/extensions.dart';
+import 'package:sharkfreefin/app/routes/app_pages.dart';
 import 'package:sharkfreefin/app/widgets/back_button.dart';
 import 'package:sharkfreefin/app/widgets/button.dart';
 
@@ -33,7 +34,7 @@ class PaymentStrategyView extends GetView<PaymentStrategyController> {
                 const SizedBox(height: 32),
                 CustomButton(
                   buttonText: "Start Questionnaire",
-                  function: () {},
+                  onPressed: () => controller.startQuestonnaire(),
                   icon: Icons.start_rounded,
                 ),
                 const SizedBox(height: 32),

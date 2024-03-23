@@ -175,7 +175,7 @@ class HorizontalCard extends StatelessWidget {
                         !paid
                             ? CustomButton(
                                 buttonText: "Pay Extra",
-                                function: () {},
+                                onPressed: () {},
                               ).small(context)
                             : const SizedBox()
                       ],

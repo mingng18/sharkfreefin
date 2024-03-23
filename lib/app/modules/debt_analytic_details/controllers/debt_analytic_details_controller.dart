@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sharkfreefin/app/data/model/chart_data_model.dart';
 
 class DebtAnalyticDetailsController extends GetxController {
 
@@ -33,11 +34,4 @@ late List<ChartData> payoffTimelineData;
     super.onClose();
   }
 
-}
-
-class ChartData {
-  ChartData(this.x, this.y);
- 
-  final String x;
-  final double y;
 }

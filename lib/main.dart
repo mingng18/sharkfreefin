@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sharkfreefin/app/global.dart';
+import 'package:sharkfreefin/app/modules/behavior/controllers/behavior_controller.dart';
+import 'package:sharkfreefin/app/modules/landing/controllers/landing_controller.dart';
+import 'package:sharkfreefin/app/state/global.dart';
 import 'package:sharkfreefin/app/utils/theme.dart';
 
 import 'app/routes/app_pages.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Get.put<GlobalService>(GlobalService());
-  
+  Get.put<BehaviorController>(BehaviorController());
+  Get.put<LandingController>(LandingController());
+
   runApp(const MyApp());
 }
 

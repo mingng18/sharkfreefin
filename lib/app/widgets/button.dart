@@ -5,11 +5,12 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
     required this.buttonText,
-    required this.function, this.icon,
+    required this.onPressed,
+    this.icon,
   }) : super(key: key);
 
   final String buttonText;
-  final VoidCallback function;
+  final VoidCallback onPressed;
   final IconData? icon;
 
   @override
@@ -21,7 +22,7 @@ class CustomButton extends StatelessWidget {
         SizedBox(
           height: 44,
           child: TextButton.icon(
-            onPressed: () {},
+            onPressed: onPressed,
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(colors.secondary),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry?>(
@@ -52,8 +53,30 @@ class CustomButton extends StatelessWidget {
         ),
       ),
       onSelected: (isSelected) {
-        function();
+        onPressed();
       },
+    );
+  }
+
+  Widget roundButton(BuildContext context) {
+    var colors = Theme.of(context).colorScheme;
+
+    return SizedBox(
+      height: 44,
+      width: 44,
+      child: IconButton.filled(
+        tooltip: buttonText,
+        iconSize: 44,
+        style: IconButton.styleFrom(
+          backgroundColor: colors.onPrimaryContainer,
+        ),
+        icon: Icon(
+          icon,
+          color: colors.primaryContainer,
+          size: 12,
+        ),
+        onPressed: onPressed,
+      ),
     );
   }
 }

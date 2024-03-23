@@ -13,6 +13,7 @@ dependencies:
   dynamic_color: ^1.7.0
   google_fonts: 6.1.0
   syncfusion_flutter_charts: ^25.1.35
+  flutter_staggered_grid_view: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +24,4 @@ flutter:
   uses-material-design: true
   assets:
     - lib/app/data/asset/images/
+    - lib/app/data/sample/

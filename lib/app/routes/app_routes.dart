@@ -16,6 +16,12 @@ abstract class Routes {
   static const PAYMENT_STRATEGY = _Paths.PAYMENT_STRATEGY;
   static const DMP_PROGRAM = _Paths.DMP_PROGRAM;
   static const DEBT_MATERIALS = _Paths.DEBT_MATERIALS;
+  static const DEBT_MATERIALS_DETAILS = _Paths.DEBT_MATERIALS_DETAILS;
+  static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
+  static const ALERT_MESSAGE = _Paths.ALERT_MESSAGE;
+  static const BULK_PURCHASE = _Paths.BULK_PURCHASE;
+  static const HELP = _Paths.HELP;
+  static const PURCHASE_GOOD_DETAIL = _Paths.PURCHASE_GOOD_DETAIL;
 }
 
 abstract class _Paths {
@@ -33,4 +39,10 @@ abstract class _Paths {
   static const PAYMENT_STRATEGY = '/payment-strategy';
   static const DMP_PROGRAM = '/dmp-program';
   static const DEBT_MATERIALS = '/debt-materials';
+  static const DEBT_MATERIALS_DETAILS = '/debt-materials-details';
+  static const QUESTIONNAIRE = '/questionnaire';
+  static const ALERT_MESSAGE = '/alert-message';
+  static const BULK_PURCHASE = '/bulk-purchase';
+  static const HELP = '/help';
+  static const PURCHASE_GOOD_DETAIL = '/purchase-good-detail';
 }

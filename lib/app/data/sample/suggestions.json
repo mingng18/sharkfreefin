@@ -1,0 +1,20 @@
+{
+  "suggestion1": {
+    "subtitle": "📍3A, Floor 3, Blok TUI, Kuala Lumpur",
+    "title": "Rent cheaper house at < RM600",
+    "body": "Or purchase affordable homes like RumahWIP, Selangorku, and PR1MA and save up to RM500 per month",
+    "buttonText": "Contact Estate Agent"
+  },
+  "suggestion2": {
+    "subtitle": "You are spending RM200 more to commute",
+    "title": "Try RapidKL on your way to work",
+    "body": "and purchase monthly pass and save up to RM300 per month",
+    "buttonText": "RapidKL Website"
+  },
+  "suggestion3": {
+    "subtitle": "Other people of same interest suggests that",
+    "title": "Buy yourself a coffee machine",
+    "body": "and save more than RM400 per month on your coffeeholic",
+    "buttonText": "Check Coffee Machine"
+  }
+}

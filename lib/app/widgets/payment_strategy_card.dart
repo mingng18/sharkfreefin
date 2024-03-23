@@ -23,7 +23,7 @@ class PaymentStrategyCard extends StatelessWidget {
           ),
           CustomButton(
             buttonText: "See More",
-            function: () => Get.toNamed(Routes.PAYMENT_STRATEGY),
+            onPressed: () => Get.toNamed(Routes.PAYMENT_STRATEGY),
           ).small(context),
         ],
       )
